@@ -1,0 +1,47 @@
+- if user_signed_in?
+	%p#intro
+	.alert.alert-success
+		%strong	Hey!!!
+		= current_user.name
+		%br/
+		%span
+			Not an employee? But you can help us by adding a new dustin to our portal.
+			Make sure to clean up the Dustbin within Two days to avoid pollution.
+			
+- else
+	%p#intro
+	.alert.alert-info
+		%strong Check if there's any Dustbin having above 85% garbage filled level?
+		%br/
+		%span
+		Select the Dustbins according to the areas assigned to you.
+
+
+
+
+
+.container
+	#posts
+		- @post.each do |post|
+			.jumbotron
+				.row
+					.col-sm-4.col-lg-4.col-md-4
+
+						.post
+							.post_image
+								=link_to (image_tag post.image.url(:small)), post
+							.post_content
+								.title
+									%h2= link_to post.title, post
+								.data.clearfix
+									%p.username
+										Added by
+										= post.user.name
+									%p.buttons
+										%span
+											%i.fa.fa-comments-o
+											= post.comments.count
+										%span
+											%i.fa.fa-thumbs-o-up
+											= post.get_likes.size 
+							
