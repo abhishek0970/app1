@@ -7,6 +7,21 @@
 		%span
 			Not an employee? But you can help us by adding a new dustin to our portal.
 			Make sure to clean up the Dustbin within Two days to avoid pollution.
+		.row
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+				= form_tag posts_path, :method => 'get' do
+  					= text_field_tag :search, params[:search]
+  					= submit_tag "Search"
 			
 - else
 	%p#intro
@@ -15,6 +30,21 @@
 		%br/
 		%span
 		Select the Dustbins according to the areas assigned to you.
+		.row
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+			.col-md-1
+				= form_tag posts_path, :method => 'get' do
+  					= text_field_tag :search, params[:search]
+  					= submit_tag "Search"
 
 
 
